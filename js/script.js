@@ -5,8 +5,10 @@ document.getElementById('guestForm').addEventListener('submit', function(e) {
   const tanggal = document.getElementById('tanggal').value;
   const gender = document.querySelector('input[name="gender"]:checked')?.value;
   const kelas = document.getElementById('kelas').value;
+  const pesan = document.getElementById('pesan').value.trim();
 
-  if (!nama || !tanggal || !gender || !kelas) return alert("Lengkapi semua field!");
+  if (!nama || !tanggal || !gender || !kelas)
+    return alert("Lengkapi semua field wajib!");
 
   const tableBody = document.querySelector('#guestTable tbody');
   const row = document.createElement('tr');
@@ -16,14 +18,13 @@ document.getElementById('guestForm').addEventListener('submit', function(e) {
     <td>${tanggal}</td>
     <td>${gender}</td>
     <td>${kelas}</td>
+    <td>${pesan}</td>
     <td><button class="delete-btn" title="Hapus">&#128465;</button></td>
   `;
 
   tableBody.appendChild(row);
 
-  // Reset form
   document.getElementById('guestForm').reset();
 
-  // Hapus baris
   row.querySelector('.delete-btn').addEventListener('click', () => row.remove());
 });
