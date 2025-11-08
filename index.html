@@ -1,94 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-    <!-- CSS External File Link -->
-    <link rel="stylesheet" href="css/style.css">
-
-    <!-- Tailwind CSS CDN Link -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Daftar Tamu Acara Sekolah</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
+  <header>
+    <div class="logo">
+      <img src="https://picsum.photos/60" alt="Logo Sekolah">
+      <h1>Daftar Tamu Acara Sekolah</h1>
+    </div>
+  </header>
 
-    <!-- Header -->
-    <header class="main-header">
-        <!-- Logo -->
-        <div class="logo"></div>
+  <main>
+    <section class="form-section">
+      <h2>Form Pendaftaran</h2>
+      <form id="guestForm">
+        <label for="nama">Nama:</label>
+        <input type="text" id="nama" name="nama" required>
 
-        <!-- Navigation Menu -->
-        <nav class="flex">
-            <a class="border rounded p-2" href="#home-page">Home</a>
-            <a class="border rounded p-2" href="#our-profile-page">Our Profile</a>
-            <a class="border rounded p-2" href="#portfolio-page">Portfolio</a>
-            <a class="border rounded p-2" href="#message-us-page">Message Us</a>
-        </nav>
-    </header>
+        <label for="tanggal">Tanggal Lahir:</label>
+        <input type="date" id="tanggal" name="tanggal" required>
 
-    <hr />
+        <label>Jenis Kelamin:</label>
+        <div class="gender">
+          <label><input type="radio" name="gender" value="Laki-laki" required> Laki-laki</label>
+          <label><input type="radio" name="gender" value="Perempuan"> Perempuan</label>
+        </div>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Home Page -->
-        <section id="home-page" class="min-h-[500px] text-center">
-            <h2 class="text-xl font-bold" id="welcome-speech">Welcome to Our Website</h2>
-            <p class="mt-2">We are glad to have you here. Explore our services and offerings.</p>
-        </section>
+        <label for="kelas">Kelas:</label>
+        <select id="kelas" name="kelas" required>
+          <option value="">-- Pilih Kelas --</option>
+          <optgroup label="Tingkat 7">
+            <option value="7A">7A</option><option value="7B">7B</option><option value="7C">7C</option><option value="7D">7D</option><option value="7E">7E</option><option value="7F">7F</option><option value="7G">7G</option>
+          </optgroup>
+          <optgroup label="Tingkat 8">
+            <option value="8A">8A</option><option value="8B">8B</option><option value="8C">8C</option><option value="8D">8D</option><option value="8E">8E</option><option value="8F">8F</option><option value="8G">8G</option>
+          </optgroup>
+          <optgroup label="Tingkat 9">
+            <option value="9A">9A</option><option value="9B">9B</option><option value="9C">9C</option><option value="9D">9D</option><option value="9E">9E</option><option value="9F">9F</option><option value="9G">9G</option>
+          </optgroup>
+          <optgroup label="Tingkat 10">
+            <option value="10A">10A</option><option value="10B">10B</option><option value="10C">10C</option><option value="10D">10D</option><option value="10E">10E</option><option value="10F">10F</option><option value="10G">10G</option>
+          </optgroup>
+          <optgroup label="Tingkat 11">
+            <option value="11A">11A</option><option value="11B">11B</option><option value="11C">11C</option><option value="11D">11D</option><option value="11E">11E</option><option value="11F">11F</option><option value="11G">11G</option>
+          </optgroup>
+          <optgroup label="Tingkat 12">
+            <option value="12A">12A</option><option value="12B">12B</option><option value="12C">12C</option><option value="12D">12D</option><option value="12E">12E</option><option value="12F">12F</option><option value="12G">12G</option>
+          </optgroup>
+        </select>
 
-        <!-- Our Profile Page -->
-        <section id="our-profile-page" class="min-h-[500px] text-center">
-            <h2 class="text-xl font-bold">About Sama 32</h2>
-            <p class="mt-2">Sama 32 is dedicated to providing top-notch services in various domains. Our team of
-                experts is committed to excellence and customer satisfaction.</p>
-        </section>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
 
-        <!-- Portfolio Page -->
-        <section id="portfolio-page" class="min-h-[500px] text-center">
-            <h2 class="text-xl font-bold">Our Portfolio</h2>
-            <p class="mt-2">Take a look at our diverse range of projects that showcase our skills and expertise.</p>
-        </section>
+    <section class="table-section">
+      <h2>Daftar Tamu</h2>
+      <div class="table-container">
+        <table id="guestTable">
+          <thead>
+            <tr>
+              <th>Nama</th>
+              <th>Tanggal Lahir</th>
+              <th>Jenis Kelamin</th>
+              <th>Kelas</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
 
-        <!-- Message Us Page -->
-        <section id="message-us-page" class="min-h-[500px] max-w-lg mx-auto">
-            <header>
-                <h2 class="text-xl font-bold">Message Us</h2>
-                <p class="mt-2">Have questions or want to work with us? Send us a message and we'll get back to you
-                    promptly.</p>
-            </header>
-
-            <form>
-                <div class="mb-4">
-                    <label class="block mb-2" for="name">Name:</label>
-                    <input class="w-full p-2 border rounded" type="text" id="name" name="name" required />
-                </div>
-                <div class="mb-4">
-                    <label class="block mb-2" for="email">Email:</label>
-                    <input class="w-full p-2 border rounded" type="email" id="email" name="email" required />
-                </div>
-                <div class="mb-4">
-                    <label class="block mb-2" for="message">Message:</label>
-                    <textarea class="w-full p-2 border rounded" id="message" name="message" rows="5"
-                        required></textarea>
-                </div>
-                <button class="px-4 py-2 bg-blue-500 text-white rounded" type="submit">Send Message</button>
-            </form>
-        </section>
-
-    </main>
-
-    <hr />
-
-    <!-- Footer -->
-    <footer>
-        <p class="text-center p-4">© 2025 Sama 32. All rights reserved.</p>
-    </footer>
-
-    <!-- JS External File Link -->
-    <script src="js/script.js"></script>
+  <script src="js/script.js"></script>
 </body>
-
 </html>
